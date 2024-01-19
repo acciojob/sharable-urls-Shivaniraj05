@@ -9,5 +9,6 @@ function updateUrl() {
 
   // Update the text in the h3 element with the new URL
   document.getElementById('url').textContent = 'https://localhost:8080/' + queryString;
+	return false;
 }
 
