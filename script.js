@@ -1,10 +1,13 @@
 // your code here
-let nameValue = document.getElementById("name").value;
-let yearValue = document.getElementById("year").value;
-let submitBtn =  document.getElementById("button");
-let heading = document.getElementById("url");
+function updateUrl() {
+  // Get values from the input fields
+  var nameValue = document.getElementById('name').value;
+  var yearValue = document.getElementById('year').value;
 
-submitBtn.addEventListener("click", () => {
-    heading.innerText = `https://localhost:8080/?name=${nameValue}&year=${yearValue}`;
-});
+  // Build the query string
+  var queryString = '?name=' + encodeURIComponent(nameValue) + '&year=' + encodeURIComponent(yearValue);
+
+  // Update the text in the h3 element with the new URL
+  document.getElementById('url').textContent = 'https://localhost:8080/' + queryString;
+}
 
